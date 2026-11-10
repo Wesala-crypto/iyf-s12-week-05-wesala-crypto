@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 1 - Color Changer</title>
+</head>
+<body>
+
+    <h1>Color Changer Challenge</h1>
+    <h2>Welcome to Day 1</h2>
+    <h3>JavaScript DOM Practice</h3>
+
+    <button id="color-button">Change Heading Colors</button>
+
+    <script>
+        // Generate a random hexadecimal color
+        function randomColor() {
+            return "#" + Math.floor(Math.random() * 16777215)
+                .toString(16)
+                .padStart(6, "0");
+        }
+
+        // Select all headings
+        const headings = document.querySelectorAll("h1, h2, h3");
+
+        // Change their colors when button is clicked
+        document.getElementById("color-button").addEventListener("click", function() {
+            headings.forEach(function(heading) {
+                heading.style.color = randomColor();
+            });
+        });
+    </script>
+
+</body>
+</html>

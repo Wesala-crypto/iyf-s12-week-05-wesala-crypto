@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 5 - Dark Mode</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f1ec;
+            color: #333;
+            text-align: center;
+            padding: 60px 20px;
+            transition: background 0.4s, color 0.4s;
+        }
+
+        .dark-mode {
+            background: #222;
+            color: white;
+        }
+
+        button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 6px;
+            background: #8b5e3c;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dark Mode Challenge</h1>
+    <p>Click the button to switch between light and dark mode.</p>
+
+    <button id="theme-button">Enable Dark Mode</button>
+
+    <script>
+        const themeButton = document.getElementById("theme-button");
+
+        themeButton.addEventListener("click", function () {
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+                themeButton.textContent = "Enable Light Mode";
+            } else {
+                themeButton.textContent = "Enable Dark Mode";
+            }
+        });
+    </script>
+</body>
+</html>
